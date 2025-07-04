@@ -1,0 +1,2 @@
+# Sistena_Gestion_Inventarios_Peque-os_Comercios
+Backend proyect
