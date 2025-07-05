@@ -1,11 +1,12 @@
-# Sistema de gestion de Inventarios de pequeños comercios
-# Problemática a Resolver 
-Tiendas locales, restaurantes o cafés luchan
-por llevar un control preciso de su inventario. Esto resulta en falta de stock
-de productos populares o exceso de inventario de otros, afectando las
-ventas y generando pérdidas.
+# Sistema Simplificado de Tracking para Paquetería Transfronteriza
 
-# Solución 
-Una API que permita registrar productos, proveedores, entradas
-de mercancía (compras) y salidas (ventas), alertando cuando el stock de
-un producto llegue a un nivel mínimo.
+# Problemática a Resolver
+Pequeñas y medianas empresas que envían productos de Tijuana
+a Estados Unidos (o viceversa) enfrentan una falta de visibilidad y control una vez que el
+paquete llega a la aduana. La comunicación con agentes aduanales y el cliente final es a
+menudo fragmentada y manual.
+
+# Solución
+Una API que permita a una empresa de logística registrar envíos, actualizar su
+estado en puntos de control clave (almacén, cruce, aduana, entrega final) y generar una
+página de seguimiento pública que el cliente final pueda consultar con un número de guía.
