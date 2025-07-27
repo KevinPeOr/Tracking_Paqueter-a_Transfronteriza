@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "module-alias": "^2.2.3",
+    "msnodesqlv8": "^5.1.1",
+    "mssql": "^11.0.1"
+  }
+}
