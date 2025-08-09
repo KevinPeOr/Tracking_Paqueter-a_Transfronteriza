@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title><%= title %></title>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+  />
+</head>
+<body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title has-text-centered mb-6">Lista de Casetas</h1>
+
+      <table class="table is-fullwidth is-striped is-hoverable">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Tipo</th>
+            <th>Latitud</th>
+            <th>Longitud</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% if (casetas.length > 0) { %>
+            <% casetas.forEach(caseta => { %>
+              <tr>
+                <td><%= caseta.id_caseta || caseta.id %></td>
+                <td><%= caseta.nombre %></td>
+                <td><%= caseta.tipo %></td>
+                <td><%= caseta.latitud %></td>
+                <td><%= caseta.longitud %></td>
+              </tr>
+            <% }) %>
+          <% } else { %>
+            <tr>
+              <td colspan="5" class="has-text-centered">No hay casetas registradas.</td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+
+      <div class="has-text-centered mt-5">
+      </div>
+    </div>
+  </section>
+</body>
+</html>

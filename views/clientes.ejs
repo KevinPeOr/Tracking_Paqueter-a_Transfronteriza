@@ -1,0 +1,59 @@
+<div class="section">
+  <h1 class="title has-text-centered mb-5">Clientes</h1>
+
+  <div class="container">
+    <div class="level">
+      <div class="level-left">
+        <a href="/clientes/nuevo" class="button is-primary">
+          <span class="icon">
+            <i class="fas fa-user-plus"></i>
+          </span>
+          <span>Agregar Cliente</span>
+        </a>
+      </div>
+      <div class="level-right">
+      </div>
+    </div>
+
+    <% if (clientes.length === 0) { %>
+      <div class="notification is-warning has-text-centered">
+        No hay clientes registrados.
+      </div>
+    <% } else { %>
+      <table class="table is-fullwidth is-striped is-hoverable is-bordered">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Teléfono</th>
+            <th>Empresa</th>
+            <th>Fecha Registro</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% clientes.forEach(cliente => { %>
+            <tr>
+              <td><%= cliente.id_cliente %></td>
+              <td><%= cliente.nombre %></td>
+              <td><%= cliente.correo_electronico %></td>
+              <td><%= cliente.telefono || '-' %></td>
+              <td><%= cliente.empresa || '-' %></td>
+              <td><%= new Date(cliente.fecha_registro).toLocaleDateString() %></td>
+              <td>
+                <form action="/clientes/<%= cliente.id_cliente %>?_method=DELETE" method="POST" style="display:inline;">
+                  <button class="button is-small is-danger" type="submit" onclick="return confirm('¿Eliminar cliente?')">
+                    <span class="icon is-small">
+                      <i class="fas fa-trash"></i>
+                    </span>
+                  </button>
+                </form>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } %>
+  </div>
+</div>

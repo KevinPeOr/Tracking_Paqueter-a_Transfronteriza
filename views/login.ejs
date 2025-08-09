@@ -1,0 +1,74 @@
+<div class="columns is-centered" style="min-height: 80vh; align-items: center;">
+  <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+    <div class="box" style="padding: 2.5rem;">
+      <h1 class="title has-text-centered">Iniciar Sesión</h1>
+
+      <% if (error) { %>
+        <div class="notification is-danger is-light">
+          <%= error %>
+        </div>
+      <% } %>
+
+      <form action="/login" method="POST" novalidate>
+        <div class="field">
+          <label class="label" for="usuario">Usuario</label>
+          <div class="control">
+            <input
+              class="input"
+              type="text"
+              id="usuario"
+              name="usuario"
+              placeholder="Ingresa tu usuario"
+              required
+              autofocus
+            />
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="password">Contraseña</label>
+          <div class="control has-icons-right">
+            <input
+              class="input"
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Ingresa tu contraseña"
+              required
+            />
+            <span
+              class="icon is-small is-right toggle-password"
+              style="cursor: pointer;"
+              onclick="togglePassword()"
+              title="Mostrar / Ocultar contraseña"
+            >
+              <i id="eye-icon" class="fas fa-eye"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="field mt-5">
+          <button class="button is-primary is-fullwidth" type="submit">
+            Entrar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  function togglePassword() {
+    const input = document.getElementById('password');
+    const icon = document.getElementById('eye-icon');
+    if (input.type === 'password') {
+      input.type = 'text';
+      icon.classList.remove('fa-eye');
+      icon.classList.add('fa-eye-slash');
+    } else {
+      input.type = 'password';
+      icon.classList.remove('fa-eye-slash');
+      icon.classList.add('fa-eye');
+    }
+  }
+</script>

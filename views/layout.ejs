@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title><%= title || "App" %></title>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <style>
+    body {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      min-height: 100vh;
+      padding: 0;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    main {
+      padding: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <% if (usuario) { %>
+  <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/clientes">
+        <strong>Traking Paquetes</strong>
+      </a>
+      <a
+        role="button"
+        class="navbar-burger"
+        aria-label="menu"
+        aria-expanded="false"
+        data-target="navbarBasic"
+        onclick="document.getElementById('navbarBasic').classList.toggle('is-active'); this.classList.toggle('is-active');"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarBasic" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="/clientes">Clientes</a>
+        <a class="navbar-item" href="/envios">Envíos</a>
+        <a class="navbar-item" href="/casetas">Casetas</a>
+        <a class="navbar-item" href="/historial">Historial</a>
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div>Hola, <strong><%= usuario %></strong></div>
+        </div>
+        <div class="navbar-item">
+          <a class="button is-light" href="/logout">Cerrar sesión</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <% } %>
+
+  <main>
+    <%- body %>
+  </main>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title><%= title %></title>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+  />
+</head>
+<body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title has-text-centered mb-6">Historial de Estados</h1>
+
+      <table class="table is-fullwidth is-striped is-hoverable">
+        <thead>
+          <tr>
+            <th>ID Historial</th>
+            <th>ID Envío</th>
+            <th>ID Estado</th>
+            <th>ID Caseta</th>
+            <th>Fecha Cambio</th>
+            <th>Ubicación</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% if (historial.length > 0) { %>
+            <% historial.forEach(item => { %>
+              <tr>
+                <td><%= item.id_historial || item.id %></td>
+                <td><%= item.id_envio %></td>
+                <td><%= item.id_estado %></td>
+                <td><%= item.id_caseta %></td>
+                <td><%= item.fecha_cambio.toLocaleString() %></td>
+                <td><%= item.ubicacion %></td>
+              </tr>
+            <% }) %>
+          <% } else { %>
+            <tr>
+              <td colspan="6" class="has-text-centered">No hay registros en el historial.</td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+
+      <div class="has-text-centered mt-5">
+      </div>
+    </div>
+  </section>
+</body>
+</html>
